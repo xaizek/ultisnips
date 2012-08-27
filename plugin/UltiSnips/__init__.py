@@ -1024,7 +1024,7 @@ class SnippetManager(object):
         """
         buf_fts = self._filetypes[_vim.buf.nr]
         idx = -1
-        for ft in ft.split("."):
+        for ft in [ft] + ft.split("."):
             ft = ft.strip()
             if not ft: continue
             try:
